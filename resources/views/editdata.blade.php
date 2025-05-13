@@ -12,7 +12,6 @@
 
 
     <div class="container mx-auto px-10">
-
         <div class="flex justify-between my-5">
             <h2 class="text-green-600 text-2xl font-bold">Edit-{{ $post->name }} </h2>
             <a href="/" class="bg-green-600 text-white rounded py-2 px-4">Back to Home</a>

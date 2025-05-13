@@ -15,14 +15,6 @@ class Postcontroller extends Controller
     public function ourstore(request $request)
     {
 
-        $validatedData = $request->validate([
-            'name' => ['required'],
-            'description' => ['required'],
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-
-
-
         $imageName = time() . '.' . $request->image->extension();
         $request->image->move(public_path('images'), $imageName);
 
@@ -61,7 +53,7 @@ class Postcontroller extends Controller
     if ($request->hasFile('image')) {
         $imageName = time() . '.' . $request->image->extension();
         $request->image->move(public_path('images'), $imageName);
-        $post->image = $imageName; // Assuming your DB column is `image`, not `images`
+        $post->image = $imageName; 
     }
 
     $post->save();
